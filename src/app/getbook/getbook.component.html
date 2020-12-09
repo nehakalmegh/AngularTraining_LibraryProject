@@ -1,0 +1,27 @@
+<div class="container">
+<h1>Book Details</h1>
+
+  <table class="table table-bordered"> 
+    <thead>
+     <tr>
+       <!-- <th (click)="sort('Book_id')" style = "font-size: 30px;">Book_id&nbsp;<i class="fa fa-sort" ></i></th> -->
+       <th style = "font-size: 30px;">Book_id</th>
+       <th style = "font-size: 30px;">Book_title</th>
+       <th style = "font-size: 30px;">Book_auther</th>
+       <th style = "font-size: 30px;">NumberOfBooks</th>
+     </tr>
+   </thead> 
+     <tbody>
+     <tr *ngFor= "let user of users ">
+        <!-- | orderBy: key:reverse -->
+       <td style = "font-size: 20px;">{{user.id}}</td>
+       <td style = "font-size: 20px;">{{user.Book_title}}</td>
+       <td style = "font-size: 20px;">{{user.Book_auther}}</td>
+       <td style = "font-size: 20px;">{{user.NumberOfBooks}}</td>
+     </tr>
+   </tbody> 
+   
+   <button type="button" class="btn btn-info" data-toggle="modal" data-target="#exampleModal" (click)="getData(user)">Get Book Details</button>
+ </table>
+</div>
+

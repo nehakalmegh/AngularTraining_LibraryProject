@@ -1,0 +1,56 @@
+<!-- <p>searchfilter works!</p>
+<div class="container">
+    <div>
+        <img src=".\assets\librarysearchengine.png">
+    </div>
+
+<div class="content" role="main">
+    <div class="card">
+      <div class="form-group">
+        <label for="search-text">Search Book By Title And Author Name</label>
+        <input type="email" class="form-control" id="search-text" aria-describedby="search-text" 
+          [(ngModel)]="searchText" placeholder="Enter text to search" 
+          autofocus>
+      </div>
+      <ul class="list-group list-group-flush">
+        
+         <li class="list-group-item" *ngFor="let b of biography | searchfilter: searchText">
+          {{b}}
+        </li>
+        <li class="list-group-item" *ngFor="let f of fiction | searchfilter: searchText">
+          {{f}}
+        </li>
+        <li class="list-group-item" *ngFor="let n of nonfiction | searchfilter: searchText">
+          {{n}}
+        </li>
+        <li class="list-group-item" *ngFor="let g of graphic | searchfilter: searchText">
+            {{g}}
+        </li>
+      </ul>
+    </div>
+  </div>  
+</div>-->
+
+
+
+<h3>{{name}}</h3>
+
+<form>
+  <div style="text-align:center">
+      <input type="text" name="title" [(ngModel)]="filter.title" placeholder="Títle">
+      <input type="text" name="author" [(ngModel)]="filter.author" placeholder="Author">
+      <input type="text" name="ISBN" [(ngModel)]="filter.metadata" placeholder="ISBN">
+      <input type="text" name="genre" [(ngModel)]="filter.metadata" placeholder="Génre">
+  </div>
+
+  <ul style="text-align:center">
+    <li *ngFor="let book of books | bookfilter:filter">
+      Títle: {{book.title}}, <br>
+      Author: {{book.author}},<br>
+      ISBN: {{book.metadata | slice:1:16 }}, <br>
+      Génre: {{book.metadata | slice:18:30}} <br>
+    </li>
+  </ul>
+
+
+</form>

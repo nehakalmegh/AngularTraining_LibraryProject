@@ -1,0 +1,40 @@
+.container{
+    background: url('/assets/frontpage.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+ //   height: 500px; /* You must set a specified height */
+  background-position: 200%; /* Center the image */
+    text-align: center;
+}
+h1{
+    font-size: 50px;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: 50px;
+    color: snow;
+    text-transform: uppercase;
+}
+h2{
+    font-size: 50px;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: 50px;
+    color: gold;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 25px;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: 20px;
+    color: aquamarine;
+    text-transform: uppercase;
+   // margin: 10px;
+}
+p{
+    font-size: 15px;
+    font-weight: 600;
+    font-family: sans-serif;
+    padding: 20px;
+    color: aqua;
+}

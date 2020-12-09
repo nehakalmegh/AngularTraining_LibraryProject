@@ -1,0 +1,47 @@
+
+<body>
+<section class="contact">
+<div class="content">
+    <h2>Contact Us</h2>
+</div>
+  <div class="container">
+
+    <!-- <div >
+         <img src=".\assets\lionhome.jpg">
+    </div> -->
+    <form (submit)=onSubmit(form.value) #form="ngForm">
+        <div class="form-group row">
+            <label for="Name" class="col-2 col-form-label">UserName</label>
+            <div class="col-10">
+                <input type="text" class="form-control" id="name" ngModel #name="ngModel" name="name" placeholder="Name"
+                    required />
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    UserName is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-2 col-form-label">Email</label>
+            <div class="col-10">
+                <input type="email" email="ngModel" class="form-control" id="email" ngModel name="email"
+                    #email="ngModel" placeholder="Email" required email />
+                <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                    Email is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="dob" class="col-2 col-form-label">Question To Ask</label>
+            <div class="col-10">
+                <input type="textarea" class="form-control" id="dob" ngModel name="dob" placeholder="Question Here" #dob="ngModel"
+                    required />
+                <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">
+                    Question is required.</div>
+            </div>
+        </div>
+
+        <button type="submit" [disabled]="!form.valid" class="btn btn-primary offset-2 col-2">Contact Us</button>
+    </form>
+</div>
+</section>
+</body>

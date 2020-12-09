@@ -1,0 +1,126 @@
+
+<body>
+<section>
+<div class="container">
+    <div class="user singupBx">
+        <div class="formBx"> 
+
+         <form (submit)=onSubmit(form.value) #form="ngForm">
+        <h2>Create an account</h2>
+        <div class="form-group row">
+            <label for="Name" class="col-2 col-form-label">UserName</label>
+            <div class="col-10">
+                <input type="text" class="form-control" id="name" ngModel #name="ngModel" name="name" placeholder="Name"
+                    required />
+                <div class="alert alert-danger" *ngIf="name.touched && !name.valid">
+                    UserName is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="lastname" class="col-2 col-form-label">LastName</label>
+            <div class="col-10">
+                <input type="text" ngModel class="form-control" id="lastname" #lastname="ngModel" name="lastname"
+                    placeholder="LastName" required />
+                <div class="alert alert-danger" *ngIf="lastname.touched && !lastname.valid">
+                    LastName is required.
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="email" class="col-2 col-form-label">Email</label>
+            <div class="col-10">
+                <input type="email" email="ngModel" class="form-control" id="email" ngModel name="email"
+                    #email="ngModel" placeholder="Email" required email />
+                <div class="alert alert-danger" *ngIf="email.touched && !email.valid">
+                    Email is required.</div>
+            </div>
+        </div>
+
+        
+            <div class="d-flex justify-content-center" >
+              <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label>User</label><br><br>
+                Member
+                <input type="radio" name="options" id="option2"  >
+                Librarian
+                <input type="radio" name="options" id="option1" > 
+               
+              </div>
+              </div>
+           
+
+        <div class="form-group row">
+            <label for="dob" class="col-2 col-form-label">Date Of Birth</label>
+            <div class="col-10">
+                <input type="date" class="form-control" id="dob" ngModel name="dob" placeholder="DOB" #dob="ngModel"
+                    required />
+                <div class="alert alert-danger" *ngIf="dob.touched && !dob.valid">
+                    DOB is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="password" class="col-2 col-form-label">Password</label>
+            <div class="col-10">
+                <input type="password" class="form-control" id="password" ngModel name="password" #password="ngModel"
+                    placeholder="Password" minlength="5" maxlength="8" required/>
+                <div class="alert alert-danger" *ngIf="password.touched && !password.valid">
+                   Password is required.</div> 
+                     <!-- <div *ngIf="password.errors.minlength">Password is minimum
+                        {{ password.errors.minlength.requiredLength }} character.</div>
+                    <div *ngIf="password.errors.maxlength">Password is maximum 8 character.</div>  -->
+               </div>
+            </div>
+
+        <button type="submit" [disabled]="!form.valid" class="btn btn-primary offset-2 col-2">Sign Up</button>
+        <p class="signup">Already have an account?<a routerLink="/login">Sign In</a></p>
+    </form>
+    </div>
+    <div class="imgBx"><img src="./assets/signuppage.jpg"></div>
+
+</div> 
+</div>
+</section>
+</body> 
+
+
+<!-- 
+<h2>Register</h2>
+<form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+        <label for="firstName">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+        <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">First Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="lastName">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+        <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" formControlName="username" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.username.errors }" />
+        <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Username is required</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" formControlName="password" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.password.errors }" />
+        <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Password is required</div>
+            <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">Register</button>
+        <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" />
+        <a routerLink="/login" class="btn btn-link">Cancel</a>
+    </div>
+</form> -->

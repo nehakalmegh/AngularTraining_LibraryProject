@@ -1,0 +1,116 @@
+.content-wrapper {
+    margin: 0 auto;
+    max-width: 100%;
+}
+h2 {
+    color: #006dae;
+    font-family: "Century Schoolbook", Georgia, "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    line-height: 1.2;
+    margin-bottom: 1.125rem;
+    margin-top: 0;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 0.3125rem;
+}
+p:last-child {
+    margin-bottom: 0;
+}
+.introduction {
+    color: #505050;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.278;
+    margin-top: 0;
+}
+.intro-text {
+    margin-left: -1rem;
+    margin-right: -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+}
+.bottom-gap--standard {
+    padding-bottom: 1.5rem;
+}
+.top-gap--standard {
+    padding-top: 1.5rem;
+}
+.bg-white {
+    background: #fff;
+}
+.row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+.bottom-gap--standard {
+    padding-bottom: 1.5rem;
+}
+.top-gap--standard {
+    padding-top: 1.5rem;
+}
+.col-xs-12 {
+    -ms-flex-preferred-size: 100%;
+    -webkit-flex-basis: 100%;
+    flex-basis: 100%;
+    max-width: 100%;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+a {
+    color: #006dae;
+    text-decoration: underline;
+}
+.btn.box-featured__cta-link {
+    text-align: left;
+}
+a:hover, a:focus, a[class*='btn'] {
+    text-decoration: none;
+}
+.box-featured a {
+    text-decoration: none;
+}
+p.button > a--blue, p.button > a--grey, .btn--blue, .btn--grey, .btn-bordered--blue, .btn-bordered--grey, .sq-form-submit--blue, .sq-form-submit--grey {
+    color: #fff;
+}
+p.button > a--blue, .btn--blue, .btn-bordered--blue, .sq-form-submit--blue {
+    background-color: #006dae;
+}
+p.button > a, .btn, .btn-bordered, .sq-form-submit {
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    background-color: #006dae;
+    border: 0;
+    color: #fff;
+    padding: 0.75rem 1.0625rem;
+    text-align: center;
+}
+.box-featured__cta-link {
+    margin: 0 1.25rem 1.25rem;
+}
+a {
+    color: #006dae;
+    text-decoration: underline;
+}
+img{
+    width: 250px;
+    height: 220px;
+    padding: 0 3px;
+}
+
+.container{
+    background: url('/assets/aboutusbackground.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center;
+}
